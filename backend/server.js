@@ -1,13 +1,11 @@
-// server.js
+// ...existing code...
 const express = require('express');
 const dotenv = require('dotenv');
 dotenv.config();
-const cors = require('cors');
-const mongoose = require('mongoose'); // 
-const cloudinary = require('cloudinary').v2; // 
-const contactRoutes = require('./routes/contactRoutes'); // 
+const mongoose = require('mongoose');
+const cloudinary = require('cloudinary').v2;
+const contactRoutes = require('./routes/contactRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
-
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -20,10 +18,43 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// Middleware
-app.use(cors({ origin: CLIENT_ORIGIN }));
+// Body parsers
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+
+// { changed code }
+// Dynamic CORS middleware: supports '*' or comma-separated origins, trims trailing slashes
+const parseAllowed = (val = '') =>
+  val
+    .split(',')
+    .map(s => s.trim().replace(/\/$/, ''))
+    .filter(Boolean);
+
+const allowedOrigins = parseAllowed(CLIENT_ORIGIN);
+
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  // debug log (remove or disable in production)
+  // console.log('[CORS] origin:', origin, 'allowedOrigins:', allowedOrigins);
+
+  if (!allowedOrigins.length || allowedOrigins.includes('*')) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  } else if (origin) {
+    const originNormalized = origin.replace(/\/$/, '');
+    if (allowedOrigins.includes(originNormalized)) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+      res.setHeader('Vary', 'Origin');
+    }
+  }
+
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+  if (req.method === 'OPTIONS') return res.sendStatus(204);
+  next();
+});
+// ...existing code...
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
@@ -34,13 +65,12 @@ mongoose.connect(process.env.MONGODB_URI, {
 .catch(err => console.error('MongoDB connection error:', err.message));
 
 // Routes
-
 app.use('/api', contactRoutes);
-app.use("/api/payment", paymentRoutes);
+app.use('/api/payment', paymentRoutes);
 
-// Basic route
-app.use('/', (req, res) => {
-  res.redirect("/api")
+// Basic root route
+app.get('/', (req, res) => {
+  res.redirect('/api');
 });
 
 // Error handling middleware
