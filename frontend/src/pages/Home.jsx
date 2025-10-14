@@ -124,27 +124,27 @@ const LargeImageSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const slides = [
-  {
-    // Ultra-modern digital marketing dashboard
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2400&auto=format&fit=crop",
-    title: "Digital Marketing Revolution",
-    subtitle: "Transform your brand with cutting-edge strategies that drive engagement and deliver measurable results"
-  },
+  // {
+  //   // Ultra-modern digital marketing dashboard
+  //   image: "slider/slider1.jpg",
+  //   title: "Digital Marketing Revolution",
+  //   subtitle: "Transform your brand with cutting-edge strategies that drive engagement and deliver measurable results"
+  // },
   {
     // Performance analytics with growing charts
-    image: "https://images.unsplash.com/photo-1590479773265-7464e5d48118?q=80&w=2400&auto=format&fit=crop", 
+    image: "slider/slider3.jpg", 
     title: "Performance-Driven Advertising",
     subtitle: "Maximize ROI with precision-targeted campaigns that convert prospects into loyal customers"
   },
   {
     // Clean, modern workspace with multiple devices
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2400&auto=format&fit=crop",
+    image: "slider/slider2.jpg",
     title: "Next-Gen Web Solutions",
     subtitle: "Create stunning digital experiences that captivate users and accelerate business growth"
   },
   {
     // Google search interface with SEO elements
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2400&auto=format&fit=crop",
+    image: "slider/slider4.jpg",
     title: "SEO Domination Strategy", 
     subtitle: "Rule search results and multiply organic traffic with our proven optimization techniques"
   }
