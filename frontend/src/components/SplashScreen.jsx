@@ -28,7 +28,7 @@ const SplashScreen = ({ onComplete }) => {
             setTimeout(() => {
               setIsVisible(false);
               setTimeout(onComplete, 800); // Wait for final fade out
-            }, 1500); // Door animation duration
+            }, 3000); // Door animation duration
           }, 1000);
           return prev;
         }
