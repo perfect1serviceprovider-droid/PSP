@@ -5,231 +5,287 @@ import {
   MapPin,
   Facebook,
   Instagram,
-  Twitter,
   Youtube,
-  ArrowRightCircle,
-  Link as LinkIcon,
-  MessageCircle
+  MessageCircle,
+  Globe,
+  Palette,
+  TrendingUp,
+  Clock,
+  Users,
+  Heart,
+  Star,
+  ArrowRight,
+  Sparkles,
+  Award,
+  Zap,
+  Code,
+  Megaphone,
+  ChevronRight,
+  Send,
+  Rocket
 } from "lucide-react";
 
 export default function Footer() {
-  const socialLinks = [
-    { 
-      icon: Facebook, 
-      href: "https://www.facebook.com/Perfectserviceprovider", 
-      label: "Facebook", 
-      color: "text-blue-600 hover:text-blue-800" 
-    },
-    { 
-      icon: Instagram, 
-      href: "https://www.instagram.com/perfect.service.provider/", 
-      label: "Instagram", 
-      color: "text-pink-600 hover:text-pink-800" 
-    },
-    { 
-      icon: Youtube, 
-      href: "https://www.youtube.com/@PerfectServiceProvider", 
-      label: "YouTube", 
-      color: "text-red-600 hover:text-red-800" 
-    },
-    { 
-      icon: MessageCircle, 
-      href: "https://whatsapp.com/channel/0029VapDtFyFXUuemB4bz31u", 
-      label: "WhatsApp", 
-      color: "text-green-600 hover:text-green-800" 
-    }
-  ];
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black text-white mt-20">
-      {/* Buckets Wrapper for responsiveness */}
-      <div className="flex flex-col lg:flex-row lg:justify-between lg:px-8 lg:absolute lg:-top-20 w-full lg:w-[calc(100%-4rem)] mx-auto gap-6 z-20">
-        {/* Left bucket - Get in Touch (Extended Height) */}
-        <div className="bg-gray-900/80 backdrop-blur-xl rounded-3xl shadow-2xl px-6 py-10 w-full lg:w-80 min-h-[320px] border border-gray-600/40 hover:shadow-gray-600/20 transition">
-          <h3 className="text-xl font-semibold mb-8 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
-            Get in Touch
-          </h3>
-          <ul className="space-y-6 text-base">
-            <li className="flex items-center gap-3">
-              <Mail size={20} className="text-blue-300" />
-              <a
-                href="mailto:Support@perfectserviceprovider.com"
-                className="hover:text-blue-200 transition break-all text-gray-200"
-              >
-                Support@perfectserviceprovider.com
-              </a>
-            </li>
-            <li className="flex items-center gap-3">
-              <Phone size={20} className="text-green-300" />
-              <a
-                href="tel:+918920267022"
-                className="hover:text-green-200 transition text-gray-200"
-              >
-                +91-89202 67022
-              </a>
-            </li>
-            <li className="flex items-center gap-3">
-              <MapPin size={20} className="text-orange-300" /> 
-              <span className="text-gray-200">New Delhi, India</span>
-            </li>
-          </ul>
-          
-          {/* Additional content to fill the extended space */}
-          <div className="mt-8 pt-6 border-t border-gray-700/50">
-            <p className="text-sm text-gray-300 leading-relaxed">
-              We're here to help you 24/7. Reach out anytime for support, 
-              consultations, or any questions about our services.
-            </p>
-          </div>
-        </div>
+    <footer className="relative bg-black text-white py-12 overflow-hidden">
+      {/* Animated Background Gradient */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/10 to-pink-900/20" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+      </div>
 
-        {/* Right bucket - Follow Us (Extended Height) */}
-        <div className="bg-gray-900/80 backdrop-blur-xl rounded-3xl shadow-2xl px-6 py-10 w-full lg:w-80 min-h-[320px] border border-gray-600/40 hover:shadow-gray-600/20 transition">
-          <h3 className="text-xl font-semibold mb-8 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
-            Follow Us
-          </h3>
+      {/* Grid Pattern Overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }}
+      />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           
-          {/* Updated Social Links using navbar style */}
-          <div className="flex justify-center gap-4 mb-8">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-gray-800/60 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 group border border-gray-700/50 hover:border-gray-600"
-                title={social.label}
-              >
-                <social.icon className={`h-6 w-6 ${social.color.replace('text-', 'text-').replace('hover:text-', 'group-hover:text-')} transition-colors duration-300`} />
-              </a>
-            ))}
-          </div>
-          
-          <div className="text-center mb-6">
-            <p className="text-sm text-gray-200">
-              Stay connected with us on social media for updates and news!
-            </p>
-          </div>
-
-          {/* Contact Us Button instead of Business Hours */}
-          <div className="mt-6 pt-6 border-t border-gray-700/50">
-            <div className="text-center">
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 relative overflow-hidden group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                <Mail className="h-5 w-5 relative z-10" />
-                <span className="relative z-10">Contact Us</span>
-              </a>
-              <p className="text-xs text-gray-400 mt-3">
-                Ready to start your project? Get in touch!
+          {/* Brand Card - Spans 2 columns */}
+          <div className="col-span-2 group relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 border border-gray-700/50 hover:border-purple-500/30 transition-all duration-300 h-full">
+              {/* Logo Section - Fixed to show logo.png */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl blur-md opacity-60 animate-pulse" />
+                  <div className="relative w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+                    <img 
+                      src="/logo.png" 
+                      alt="PSP Logo" 
+                      className="w-full h-full object-contain p-1"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    {/* Fallback if logo doesn't load */}
+                    <div className="hidden w-full h-full items-center justify-center bg-gradient-to-br from-purple-500 to-blue-600">
+                      <Sparkles className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">PSP</h3>
+                  <p className="text-[10px] text-gray-400 font-medium tracking-wider">PERFECT SERVICE PROVIDER</p>
+                </div>
+              </div>
+              
+              <p className="text-xs text-gray-400 mb-4 leading-relaxed">
+                Transforming visions into digital reality with innovation and excellence
               </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Compact Footer Content with Logo - Enhanced Colors */}
-      <div className="container mx-auto px-6 pt-36 lg:pt-28 pb-6 relative z-10">
-        <div className="text-center">
-          {/* Company Logo with curved edges only */}
-          <div className="mb-6">
-            <img
-              src="/logo.png"
-              alt="Perfect Service Provider Logo"
-              className="h-14 w-auto mx-auto drop-shadow-lg filter hover:brightness-110 transition-all duration-300 rounded-2xl"
-            />
-          </div>
-
-          {/* Company Name */}
-          <h2 className="text-xl font-bold mb-3 tracking-wide bg-gradient-to-r from-slate-200 via-white to-slate-200 bg-clip-text text-transparent">
-            Perfect Service Provider
-          </h2>
-          
-          {/* Enhanced description with better readability */}
-          <p className="text-slate-200 text-base max-w-2xl mx-auto mb-8 leading-relaxed font-light">
-            We deliver the best services and solutions tailored for your
-            business success. <span className="text-blue-200">Join thousands of satisfied customers</span> who trust our expertise.
-          </p>
-
-          {/* Service Navigation Links with About instead of Contact */}
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm mb-6">
-            {[
-              { name: "Digital Marketing", path: "/services/digital-marketing", color: "text-blue-200 hover:text-blue-100" },
-              { name: "Web Development", path: "/services/web-development", color: "text-emerald-200 hover:text-emerald-100" },
-              { name: "Graphics Design", path: "/services/graphics-design", color: "text-purple-200 hover:text-purple-100" },
-              { name: "About", path: "/about", color: "text-pink-200 hover:text-pink-100" },
-            ].map((item, idx) => (
-              <a
-                key={idx}
-                href={item.path}
-                className={`group flex items-center gap-2 px-4 py-2 rounded-full border border-slate-600 hover:border-slate-400 bg-slate-800/40 hover:bg-slate-700/60 transition-all duration-300 ${item.color}`}
-              >
-                <ArrowRightCircle
-                  size={16}
-                  className="text-slate-400 group-hover:text-slate-200 transition-colors"
-                />
-                <span className="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-current after:to-current after:transition-all group-hover:after:w-full">
-                  {item.name}
-                </span>
-              </a>
-            ))}
-          </div>
-
-          {/* Legal Links Section with enhanced styling */}
-          <div className="relative">
-            <div className="bg-gradient-to-r from-slate-800/40 via-gray-800/40 to-slate-800/40 backdrop-blur-sm rounded-xl border border-slate-600/30 p-6 hover:border-slate-500/40 transition-all duration-300">
-              <div className="flex flex-wrap justify-center gap-6 text-sm">
-                {[
-                  { name: "Privacy Policy", href: "/privacy-policy", color: "text-slate-300 hover:text-white" },
-                  { name: "Terms & Conditions", href: "/terms-conditions", color: "text-slate-300 hover:text-white" },
-                  { name: "Return Policy", href: "/refund-policy", color: "text-slate-300 hover:text-white" },
-                ].map((link, idx) => (
-                  <a
-                    key={idx}
-                    href={link.href}
-                    className={`flex items-center gap-2 ${link.color} transition-colors duration-200 relative group`}
-                  >
-                    <LinkIcon size={14} className="text-slate-400 group-hover:text-slate-200 transition-colors" />
-                    <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-gradient-to-r after:from-slate-300 after:to-white after:transition-all group-hover:after:w-full">
-                      {link.name}
-                    </span>
-                  </a>
-                ))}
+              
+              {/* Stats with animated counters */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-gray-800/50 rounded-lg p-3 text-center group/stat hover:bg-gray-800/70 transition-colors">
+                  <div className="flex items-center justify-center gap-1 mb-1">
+                    <Users className="w-3 h-3 text-blue-400" />
+                    <p className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">350+</p>
+                  </div>
+                  <p className="text-[10px] text-gray-500 uppercase tracking-wider">Happy Clients</p>
+                </div>
+                <div className="bg-gray-800/50 rounded-lg p-3 text-center group/stat hover:bg-gray-800/70 transition-colors">
+                  <div className="flex items-center justify-center gap-1 mb-1">
+                    <Award className="w-3 h-3 text-green-400" />
+                    <p className="text-xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">500+</p>
+                  </div>
+                  <p className="text-[10px] text-gray-500 uppercase tracking-wider">Projects</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Bottom bar */}
-      <div className="bg-gray-800/90 backdrop-blur-md py-4 border-t border-gray-700">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-3">
-            <div className="text-center md:text-left">
-              <div className="mb-1">
-                © {new Date().getFullYear()} Perfect Service Provider. All rights reserved.
-              </div>
-              <div className="text-xs text-gray-500">
-                Created by <span className="text-blue-400 hover:text-blue-300 transition-colors">Perfect Service Provider</span>
-              </div>
-            </div>
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-5">
-              {[
-                { name: "Privacy Policy", path: "/privacy-policy" },
-                { name: "Terms & Conditions", path: "/terms-conditions" },
-                { name: "Return Policy", path: "/refund-policy" },
-              ].map((item, idx) => (
-                <a
-                  key={idx}
-                  href={item.path}
-                  className="relative hover:text-white transition after:absolute after:left-0 after:-bottom-0.5 after:h-[1px] after:w-0 after:bg-white after:transition-all hover:after:w-full"
-                >
-                  {item.name}
+          {/* Services Card */}
+          <div className="col-span-2 group relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-blue-500/30 transition-all duration-300 h-full">
+              <h4 className="text-sm font-semibold mb-4 text-white flex items-center gap-2">
+                <div className="p-1.5 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-lg">
+                  <Zap className="w-4 h-4 text-yellow-400" />
+                </div>
+                Our Services
+              </h4>
+              <div className="space-y-3">
+                <a href="#" className="flex items-center gap-3 p-2.5 rounded-lg text-xs text-gray-400 hover:text-white hover:bg-gray-800/50 group/service transition-all">
+                  <div className="p-1.5 bg-blue-500/10 rounded-lg group-hover/service:bg-blue-500/20 transition-colors">
+                    <Megaphone className="w-3.5 h-3.5 text-blue-400" />
+                  </div>
+                  <span className="flex-1 font-medium">Digital Marketing</span>
+                  <ChevronRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover/service:opacity-100 group-hover/service:translate-x-0 transition-all" />
                 </a>
-              ))}
+                <a href="#" className="flex items-center gap-3 p-2.5 rounded-lg text-xs text-gray-400 hover:text-white hover:bg-gray-800/50 group/service transition-all">
+                  <div className="p-1.5 bg-green-500/10 rounded-lg group-hover/service:bg-green-500/20 transition-colors">
+                    <Code className="w-3.5 h-3.5 text-green-400" />
+                  </div>
+                  <span className="flex-1 font-medium">Web Development</span>
+                  <ChevronRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover/service:opacity-100 group-hover/service:translate-x-0 transition-all" />
+                </a>
+                <a href="#" className="flex items-center gap-3 p-2.5 rounded-lg text-xs text-gray-400 hover:text-white hover:bg-gray-800/50 group/service transition-all">
+                  <div className="p-1.5 bg-purple-500/10 rounded-lg group-hover/service:bg-purple-500/20 transition-colors">
+                    <Palette className="w-3.5 h-3.5 text-purple-400" />
+                  </div>
+                  <span className="flex-1 font-medium">Graphics Design</span>
+                  <ChevronRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover/service:opacity-100 group-hover/service:translate-x-0 transition-all" />
+                </a>
+              </div>
             </div>
+          </div>
+
+          {/* Contact Card - Spans 2 columns */}
+          <div className="col-span-2 group relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-green-600/20 to-blue-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-green-500/30 transition-all duration-300 h-full">
+              <h4 className="text-sm font-semibold mb-4 text-white flex items-center gap-2">
+                <div className="p-1.5 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-lg">
+                  <Phone className="w-4 h-4 text-green-400" />
+                </div>
+                Quick Contact
+              </h4>
+              <div className="space-y-3">
+                <a href="tel:+918920267022" className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-800/50 text-xs text-gray-400 hover:text-white transition-all group/contact">
+                  <div className="p-1.5 bg-green-500/10 rounded-lg group-hover/contact:bg-green-500/20 transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-green-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white">+91-89202 67022</p>
+                    <p className="text-[10px] text-gray-500">Call us directly</p>
+                  </div>
+                </a>
+                <a href="mailto:Support@perfectserviceprovider.com" className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-800/50 text-xs text-gray-400 hover:text-white transition-all group/contact">
+                  <div className="p-1.5 bg-blue-500/10 rounded-lg group-hover/contact:bg-blue-500/20 transition-colors">
+                    <Mail className="w-3.5 h-3.5 text-blue-400" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-white truncate">support@perfectserviceprovider.com</p>
+                    <p className="text-[10px] text-gray-500">Email support</p>
+                  </div>
+                </a>
+                <div className="flex items-center gap-3 p-2.5 rounded-lg text-xs text-gray-400">
+                  <div className="p-1.5 bg-orange-500/10 rounded-lg">
+                    <Clock className="w-3.5 h-3.5 text-orange-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-300">Mon - Sat</p>
+                    <p className="text-[10px] text-gray-500">9:00 AM - 8:00 PM IST</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Links Card */}
+          <div className="col-span-2 lg:col-span-3 group relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-pink-600/30 rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative bg-gradient-to-br from-purple-900/30 to-pink-900/30 backdrop-blur-sm rounded-2xl p-6 border border-purple-700/30 hover:border-purple-500/50 transition-all duration-300 h-full">
+              <h4 className="text-sm font-semibold mb-4 text-white flex items-center gap-2">
+                <div className="p-1.5 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg">
+                  <Heart className="w-4 h-4 text-pink-400" />
+                </div>
+                Connect With Us
+              </h4>
+              <div className="flex flex-wrap gap-3">
+                <a 
+                  href="https://www.facebook.com/Perfectserviceprovider" 
+                  className="group/social relative w-12 h-12 bg-gray-800/60 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-blue-500/50 hover:bg-blue-600/20 hover:scale-110 hover:-translate-y-1 transition-all duration-300"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5 text-gray-400 group-hover/social:text-blue-400 transition-colors" />
+                  <div className="absolute inset-0 bg-blue-500/20 rounded-xl blur-md opacity-0 group-hover/social:opacity-100 transition-opacity" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/perfect.service.provider/" 
+                  className="group/social relative w-12 h-12 bg-gray-800/60 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-purple-500/50 hover:bg-gradient-to-br hover:from-purple-600/20 hover:to-pink-600/20 hover:scale-110 hover:-translate-y-1 transition-all duration-300"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5 text-gray-400 group-hover/social:text-pink-400 transition-colors" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl blur-md opacity-0 group-hover/social:opacity-100 transition-opacity" />
+                </a>
+                <a 
+                  href="https://www.youtube.com/@PerfectServiceProvider" 
+                  className="group/social relative w-12 h-12 bg-gray-800/60 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-red-500/50 hover:bg-red-600/20 hover:scale-110 hover:-translate-y-1 transition-all duration-300"
+                  aria-label="YouTube"
+                >
+                  <Youtube className="w-5 h-5 text-gray-400 group-hover/social:text-red-400 transition-colors" />
+                  <div className="absolute inset-0 bg-red-500/20 rounded-xl blur-md opacity-0 group-hover/social:opacity-100 transition-opacity" />
+                </a>
+                
+              </div>
+              <p className="text-[10px] text-gray-500 mt-3">Follow us for updates and insights</p>
+            </div>
+          </div>
+
+          {/* CTA Card */}
+          <div className="col-span-2 lg:col-span-3 group relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
+            <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 overflow-hidden h-full">
+              {/* Animated background pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0" style={{
+                  backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 1px)`,
+                  backgroundSize: '20px 20px'
+                }} />
+              </div>
+              
+              <div className="relative">
+                <h4 className="text-sm font-semibold mb-2 text-white flex items-center gap-2">
+                  <Rocket className="w-4 h-4" />
+                  Ready to Start Your Project?
+                </h4>
+                <p className="text-[11px] text-blue-100 mb-4">
+                  Let's transform your ideas into reality
+                </p>
+                <a 
+                  href="/contact" 
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-gray-900 rounded-xl text-xs font-bold hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Get Started Now
+                  <Send className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-8 pt-6 border-t border-gray-800/50">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+            <p className="text-gray-400 flex items-center gap-2">
+              <span className="text-gray-500">©</span>
+              <span className="font-medium">{currentYear} Perfect Service Provider</span>
+              <span className="text-gray-600">•</span>
+              <span className="text-gray-500">All rights reserved</span>
+            </p>
+            
+            <div className="flex items-center gap-6">
+              <a href="/privacy-policy" className="text-gray-500 hover:text-purple-400 transition-colors flex items-center gap-1 group">
+                Privacy
+                <ChevronRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+              </a>
+              <a href="/terms-conditions" className="text-gray-500 hover:text-purple-400 transition-colors flex items-center gap-1 group">
+                Terms
+                <ChevronRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+              </a>
+              <a href="/refund-policy" className="text-gray-500 hover:text-purple-400 transition-colors flex items-center gap-1 group">
+                Refund
+                <ChevronRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+              </a>
+            </div>
+            
+            {/* Updated attribution text */}
+            <p className="flex items-center gap-1.5 text-gray-400">
+              <span>Made with</span>
+              <span className="text-red-500">❤️</span>
+              <span>by Perfect Service Provider</span>
+            </p>
           </div>
         </div>
       </div>
