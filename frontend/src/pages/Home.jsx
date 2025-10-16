@@ -663,14 +663,17 @@ export default function Home() {
                   </div>
                   
                   {/* CTA */}
-                  <motion.button 
-                    className="w-full py-3 px-6 bg-gray-100 text-gray-700 rounded-xl font-bold group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Learn More
-                    <ArrowUpRight className="h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </motion.button>
+                  {/* CTA */}
+<motion.a 
+  href="/about"
+  className="w-full py-3 px-6 bg-gray-100 text-gray-700 rounded-xl font-bold group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:text-white transition-all duration-300 flex items-center justify-center gap-2"
+  whileHover={{ scale: 1.02 }}
+  whileTap={{ scale: 0.98 }}
+>
+  Learn More
+  <ArrowUpRight className="h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+</motion.a>
+
                 </div>
 
                 {/* Decorative Element */}
@@ -824,176 +827,171 @@ export default function Home() {
       </section>
 
       {/* Enhanced Contact Section */}
-      <section className="py-24 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden" ref={contactRef}>
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20" />
-          <motion.div 
-            className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500 rounded-full blur-3xl opacity-20"
-            animate={{ 
-              x: [0, 50, 0],
-              y: [0, -30, 0],
-            }}
-            transition={{ duration: 10, repeat: Infinity }}
-          />
-          <motion.div 
-            className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500 rounded-full blur-3xl opacity-20"
-            animate={{ 
-              x: [0, -50, 0],
-              y: [0, 30, 0],
-            }}
-            transition={{ duration: 12, repeat: Infinity }}
-          />
-        </div>
+      {/* Enhanced Contact Section */}
+<section className="py-24 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden" ref={contactRef}>
+  {/* Animated Background */}
+  <div className="absolute inset-0">
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20" />
+    <motion.div 
+      className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500 rounded-full blur-3xl opacity-20"
+      animate={{ 
+        x: [0, 50, 0],
+        y: [0, -30, 0],
+      }}
+      transition={{ duration: 10, repeat: Infinity }}
+    />
+    <motion.div 
+      className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500 rounded-full blur-3xl opacity-20"
+      animate={{ 
+        x: [0, -50, 0],
+        y: [0, 30, 0],
+      }}
+      transition={{ duration: 12, repeat: Infinity }}
+    />
+  </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={contactInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          >
-            <motion.div 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-bold mb-6 border border-white/20"
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
-            >
-              <MessageCircle className="h-4 w-4" />
-              GET IN TOUCH
-            </motion.div>
+  <div className="max-w-7xl mx-auto relative z-10">
+    <motion.div 
+      className="text-center mb-16"
+      initial={{ opacity: 0, y: 30 }}
+      animate={contactInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+    >
+      <motion.div 
+        className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-bold mb-6 border border-white/20"
+        whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
+      >
+        <MessageCircle className="h-4 w-4" />
+        GET IN TOUCH
+      </motion.div>
+      
+      <h2 className="text-4xl lg:text-6xl font-black leading-tight mb-6">
+        <span className="text-white">Ready to Start Your</span>
+        <br />
+        <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+          Success Story?
+        </span>
+      </h2>
+      <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        Let's discuss your project and see how we can help you achieve extraordinary digital growth.
+      </p>
+    </motion.div>
+
+    <motion.div 
+      className="grid lg:grid-cols-3 gap-8 mb-16"
+      variants={staggerContainer}
+      animate={contactInView ? "animate" : "initial"}
+    >
+      {[
+        { 
+          icon: Mail, 
+          title: "Email Us", 
+          info: "Support@perfectserviceprovider.com", 
+          link: "mailto:Support@perfectserviceprovider.com", 
+          gradient: "from-blue-500 to-cyan-500",
+          action: "Send Email",
+          description: "Get in touch for project inquiries"
+        },
+        { 
+          icon: Phone, 
+          title: "Call Us", 
+          info: "+91-89202 67022", 
+          link: "tel:+918920267022", 
+          gradient: "from-green-500 to-emerald-500",
+          action: "Call Now",
+          description: "Speak directly with our experts"
+        },
+        { 
+          icon: MapPin, 
+          title: "Visit Us", 
+          info: "B-8/21, Near Mount Abu School, Rohini Sector 5, New Delhi - 110085", 
+          link: "https://maps.app.goo.gl/v3UhSwscFc1pN5cFA", 
+          gradient: "from-purple-500 to-pink-500",
+          action: "Get Directions",
+          description: "Meet us at our office"
+        }
+      ].map((contact, index) => (
+        <motion.div 
+          key={index} 
+          className="group relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 overflow-hidden"
+          variants={scaleIn}
+          whileHover={{ y: -8, scale: 1.02 }}
+        >
+          
+          <div className={`absolute inset-0 bg-gradient-to-br ${contact.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+          
+          <div className="relative z-10">
             
-            <h2 className="text-4xl lg:text-6xl font-black leading-tight mb-6">
-              <span className="text-white">Ready to Start Your</span>
-              <br />
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Success Story?
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Let's discuss your project and see how we can help you achieve extraordinary digital growth.
-            </p>
-          </motion.div>
-
-          <motion.div 
-            className="grid lg:grid-cols-3 gap-8 mb-16"
-            variants={staggerContainer}
-            animate={contactInView ? "animate" : "initial"}
-          >
-            {[
-              { 
-                icon: Mail, 
-                title: "Email Us", 
-                info: "Support@perfectserviceprovider.com", 
-                link: "mailto:Support@perfectserviceprovider.com", 
-                gradient: "from-blue-500 to-cyan-500",
-                action: "Send Email",
-                description: "Get in touch for project inquiries"
-              },
-              { 
-                icon: Phone, 
-                title: "Call Us", 
-                info: "+91-89202 67022", 
-                link: "tel:+918920267022", 
-                gradient: "from-green-500 to-emerald-500",
-                action: "Call Now",
-                description: "Speak directly with our experts"
-              },
-              { 
-                icon: MapPin, 
-                title: "Visit Us", 
-                info: "Delhi, India", 
-                link: null, 
-                gradient: "from-purple-500 to-pink-500",
-                action: "Get Directions",
-                description: "Meet us at our office"
-              }
-            ].map((contact, index) => (
-              <motion.div 
-                key={index} 
-                className="group relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-white/30 transition-all duration-300 overflow-hidden"
-                variants={scaleIn}
-                whileHover={{ y: -8, scale: 1.02 }}
-              >
-                
-                <div className={`absolute inset-0 bg-gradient-to-br ${contact.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                
-                <div className="relative z-10">
-                  
-                  <div className={`w-20 h-20 bg-gradient-to-br ${contact.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-2xl mx-auto group-hover:scale-110 transition-transform duration-300`}>
-                    <contact.icon className="h-10 w-10 text-white" />
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold text-white mb-2 text-center">{contact.title}</h3>
-                  
-                  <p className="text-gray-400 text-sm mb-4 text-center">{contact.description}</p>
-                  
-                  <p className="text-white text-xl font-semibold mb-6 text-center">{contact.info}</p>
-                  
-                  {contact.link ? (
-                    <motion.a 
-                      href={contact.link} 
-                      className={`w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r ${contact.gradient} text-white rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300`}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <span>{contact.action}</span>
-                      <ArrowUpRight className="h-5 w-5" />
-                    </motion.a>
-                  ) : (
-                    <motion.button 
-                      className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-white/10 backdrop-blur-sm text-white rounded-2xl font-bold border border-white/20 hover:bg-white/20 transition-all duration-300"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <span>{contact.action}</span>
-                      <ArrowUpRight className="h-5 w-5" />
-                    </motion.button>
-                  )}
-                </div>
-
-                <div className={`absolute -bottom-10 -right-10 w-32 h-32 bg-gradient-to-br ${contact.gradient} rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500`} />
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Additional CTA Section */}
-          <motion.div 
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={contactInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ delay: 0.3 }}
-          >
-            <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-1 rounded-3xl max-w-2xl mx-auto">
-              <div className="bg-gray-900 rounded-3xl p-12">
-                <h3 className="text-3xl font-bold text-white mb-4">
-                  Let's Create Something Amazing Together
-                </h3>
-                <p className="text-gray-300 mb-8 text-lg">
-                  Join 350+ successful brands that have transformed their digital presence with us.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <motion.a
-                    href="/contact"
-                    className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-gray-900 rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Send className="h-5 w-5" />
-                    Start Free Consultation
-                  </motion.a>
-                  {/* <motion.a
-                    href="/portfolio"
-                    className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-2xl font-bold border border-white/20 hover:bg-white/20 transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Eye className="h-5 w-5" />
-                    View Our Work
-                  </motion.a> */}
-                </div>
-              </div>
+            <div className={`w-20 h-20 bg-gradient-to-br ${contact.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-2xl mx-auto group-hover:scale-110 transition-transform duration-300`}>
+              <contact.icon className="h-10 w-10 text-white" />
             </div>
-          </motion.div>
+            
+            <h3 className="text-2xl font-bold text-white mb-2 text-center">{contact.title}</h3>
+            
+            <p className="text-gray-400 text-sm mb-4 text-center">{contact.description}</p>
+            
+            <p className="text-white text-xl font-semibold mb-6 text-center">{contact.info}</p>
+            
+            {contact.link ? (
+              <motion.a 
+                href={contact.link} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r ${contact.gradient} text-white rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>{contact.action}</span>
+                <ArrowUpRight className="h-5 w-5" />
+              </motion.a>
+            ) : (
+              <motion.button 
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-white/10 backdrop-blur-sm text-white rounded-2xl font-bold border border-white/20 hover:bg-white/20 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>{contact.action}</span>
+                <ArrowUpRight className="h-5 w-5" />
+              </motion.button>
+            )}
+          </div>
+
+          <div className={`absolute -bottom-10 -right-10 w-32 h-32 bg-gradient-to-br ${contact.gradient} rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500`} />
+        </motion.div>
+      ))}
+    </motion.div>
+
+    {/* Additional CTA Section */}
+    <motion.div 
+      className="text-center"
+      initial={{ opacity: 0, y: 30 }}
+      animate={contactInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ delay: 0.3 }}
+    >
+      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 p-1 rounded-3xl max-w-2xl mx-auto">
+        <div className="bg-gray-900 rounded-3xl p-12">
+          <h3 className="text-3xl font-bold text-white mb-4">
+            Let's Create Something Amazing Together
+          </h3>
+          <p className="text-gray-300 mb-8 text-lg">
+            Join 350+ successful brands that have transformed their digital presence with us.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.a
+              href="/contact"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-gray-900 rounded-2xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Send className="h-5 w-5" />
+              Start Free Consultation
+            </motion.a>
+          </div>
         </div>
-      </section>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
     </div>
   );
 }
