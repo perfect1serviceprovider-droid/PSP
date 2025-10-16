@@ -8,7 +8,7 @@ import {
   CheckCircle, AlertCircle, Loader, Sparkles, Building2, Copy, Eye, EyeOff
 } from 'lucide-react';
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'https://psp-ylck.onrender.com';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://psp-ylck.onrender.com';
 
 const Payment = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', amount: '' });
