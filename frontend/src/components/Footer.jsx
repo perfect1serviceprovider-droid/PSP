@@ -25,6 +25,18 @@ import {
   Rocket
 } from "lucide-react";
 
+// Custom WhatsApp SVG Component
+const WhatsAppIcon = ({ className }) => (
+  <svg 
+    className={className} 
+    viewBox="0 0 24 24" 
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+);
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -115,21 +127,21 @@ export default function Footer() {
                 Our Services
               </h4>
               <div className="space-y-3">
-                <a href="#" className="flex items-center gap-3 p-2.5 rounded-lg text-xs text-gray-400 hover:text-white hover:bg-gray-800/50 group/service transition-all">
+                <a href="/services/digital-marketing" className="flex items-center gap-3 p-2.5 rounded-lg text-xs text-gray-400 hover:text-white hover:bg-gray-800/50 group/service transition-all">
                   <div className="p-1.5 bg-blue-500/10 rounded-lg group-hover/service:bg-blue-500/20 transition-colors">
                     <Megaphone className="w-3.5 h-3.5 text-blue-400" />
                   </div>
                   <span className="flex-1 font-medium">Digital Marketing</span>
                   <ChevronRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover/service:opacity-100 group-hover/service:translate-x-0 transition-all" />
                 </a>
-                <a href="#" className="flex items-center gap-3 p-2.5 rounded-lg text-xs text-gray-400 hover:text-white hover:bg-gray-800/50 group/service transition-all">
+                <a href="/services/web-development" className="flex items-center gap-3 p-2.5 rounded-lg text-xs text-gray-400 hover:text-white hover:bg-gray-800/50 group/service transition-all">
                   <div className="p-1.5 bg-green-500/10 rounded-lg group-hover/service:bg-green-500/20 transition-colors">
                     <Code className="w-3.5 h-3.5 text-green-400" />
                   </div>
                   <span className="flex-1 font-medium">Web Development</span>
                   <ChevronRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover/service:opacity-100 group-hover/service:translate-x-0 transition-all" />
                 </a>
-                <a href="#" className="flex items-center gap-3 p-2.5 rounded-lg text-xs text-gray-400 hover:text-white hover:bg-gray-800/50 group/service transition-all">
+                <a href="/services/graphics-media" className="flex items-center gap-3 p-2.5 rounded-lg text-xs text-gray-400 hover:text-white hover:bg-gray-800/50 group/service transition-all">
                   <div className="p-1.5 bg-purple-500/10 rounded-lg group-hover/service:bg-purple-500/20 transition-colors">
                     <Palette className="w-3.5 h-3.5 text-purple-400" />
                   </div>
@@ -194,7 +206,9 @@ export default function Footer() {
               </h4>
               <div className="flex flex-wrap gap-3">
                 <a 
-                  href="https://www.facebook.com/Perfectserviceprovider" 
+                  href="https://www.facebook.com/Perfectserviceprovidercompany/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group/social relative w-12 h-12 bg-gray-800/60 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-blue-500/50 hover:bg-blue-600/20 hover:scale-110 hover:-translate-y-1 transition-all duration-300"
                   aria-label="Facebook"
                 >
@@ -203,6 +217,8 @@ export default function Footer() {
                 </a>
                 <a 
                   href="https://www.instagram.com/perfect.service.provider/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group/social relative w-12 h-12 bg-gray-800/60 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-purple-500/50 hover:bg-gradient-to-br hover:from-purple-600/20 hover:to-pink-600/20 hover:scale-110 hover:-translate-y-1 transition-all duration-300"
                   aria-label="Instagram"
                 >
@@ -211,13 +227,24 @@ export default function Footer() {
                 </a>
                 <a 
                   href="https://www.youtube.com/@PerfectServiceProvider" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group/social relative w-12 h-12 bg-gray-800/60 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-red-500/50 hover:bg-red-600/20 hover:scale-110 hover:-translate-y-1 transition-all duration-300"
                   aria-label="YouTube"
                 >
                   <Youtube className="w-5 h-5 text-gray-400 group-hover/social:text-red-400 transition-colors" />
                   <div className="absolute inset-0 bg-red-500/20 rounded-xl blur-md opacity-0 group-hover/social:opacity-100 transition-opacity" />
                 </a>
-                
+                <a 
+                  href="https://wa.me/918920267022?text=Hello%20Perfect%20Service%20Provider!%20I%20would%20like%20to%20know%20more%20about%20your%20services." 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/social relative w-12 h-12 bg-gray-800/60 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-green-500/50 hover:bg-green-600/20 hover:scale-110 hover:-translate-y-1 transition-all duration-300"
+                  aria-label="WhatsApp"
+                >
+                  <WhatsAppIcon className="w-5 h-5 text-gray-400 group-hover/social:text-green-400 transition-colors" />
+                  <div className="absolute inset-0 bg-green-500/20 rounded-xl blur-md opacity-0 group-hover/social:opacity-100 transition-opacity" />
+                </a>
               </div>
               <p className="text-[10px] text-gray-500 mt-3">Follow us for updates and insights</p>
             </div>
