@@ -75,7 +75,7 @@ export default function Navbar() {
   const socialLinks = [
     { 
       icon: Facebook, 
-      href: "https://www.facebook.com/Perfectserviceprovider", 
+      href: "https://www.facebook.com/Perfectserviceprovidercompany/", 
       label: "Facebook", 
       color: "text-blue-600 hover:text-white",
       bgHover: "hover:bg-blue-600",
@@ -99,7 +99,7 @@ export default function Navbar() {
     },
     { 
       icon: WhatsAppIcon, 
-      href: "https://whatsapp.com/channel/0029VapDtFyFXUuemB4bz31u", 
+      href: "https://wa.me/918920267022?text=Hello%20Perfect%20Service%20Provider!%20I%20would%20like%20to%20know%20more%20about%20your%20services.", 
       label: "WhatsApp", 
       color: "text-green-600 hover:text-white",
       bgHover: "hover:bg-green-500",
