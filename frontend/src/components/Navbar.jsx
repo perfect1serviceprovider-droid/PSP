@@ -422,7 +422,7 @@ export default function Navbar() {
                   <Mail className="h-4 w-4 sm:h-5 sm:w-5 relative z-10" />
                   <span className="relative z-10">Get In Touch</span>
                 </Link>
-                
+                {/* 
                 <Link
                   to="/payment"
                   className="flex items-center justify-center gap-3 w-full py-3 sm:py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] lg:hidden relative"
@@ -434,7 +434,7 @@ export default function Navbar() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                   </span>
-                </Link>
+                </Link> */}
               </div>
 
               {/* Mobile Social Links - Enhanced with glowing shadows */}
