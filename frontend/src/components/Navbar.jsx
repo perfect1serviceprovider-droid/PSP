@@ -302,7 +302,7 @@ export default function Navbar() {
               </Link>
 
               {/* Payment Button */}
-              <Link
+              {/* <Link
                 to="/payment"
                 className="hidden lg:flex items-center gap-1.5 lg:gap-2 px-3 lg:px-5 py-2 lg:py-2.5 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-2xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 text-sm lg:text-base relative overflow-hidden group"
               >
@@ -314,10 +314,10 @@ export default function Navbar() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                 </span>
-              </Link>
+              </Link> */}
 
               {/* Compact Payment Button - Small screens */}
-              <Link
+              {/* <Link
                 to="/payment"
                 className="flex lg:hidden items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300 text-sm relative"
               >
@@ -327,7 +327,7 @@ export default function Navbar() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-              </Link>
+              </Link> */}
 
               {/* Mobile Menu Button */}
               <button 
