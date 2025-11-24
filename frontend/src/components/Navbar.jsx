@@ -68,7 +68,7 @@ export default function Navbar() {
       link: "/services/digital-marketing",
       color: "green",
       bgGradient: "from-green-50 to-emerald-50",
-      features: ["Social Media", "PPC Campaigns"]
+      features: ["Social Media", "Google Ads Campaigns"]
     }
   ];
 
