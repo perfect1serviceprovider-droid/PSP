@@ -44,6 +44,7 @@ const RefundPolicy = () => {
               <ul className="text-blue-800 list-disc pl-6">
                 <li>Review and verification: varies by case</li>
                 <li>Refund processing: typically 30–35 working days, depending on information availability</li>
+                <li>Once your refund request has been approved, the credited amount will be processed and reflected in your original payment method within 10 to 15 business days.</li>
               </ul>
             </div>
             <p className="mb-4">
