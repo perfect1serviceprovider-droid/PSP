@@ -216,7 +216,7 @@ export default function Footer() {
                   <div className="absolute inset-0 bg-blue-500/20 rounded-xl blur-md opacity-0 group-hover/social:opacity-100 transition-opacity" />
                 </a>
                 <a 
-                  href="https://www.instagram.com/perfect.service.provider/" 
+                  href="https://www.instagram.com/perfect.service.provider.psp" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group/social relative w-12 h-12 bg-gray-800/60 backdrop-blur-sm rounded-xl flex items-center justify-center border border-gray-700/50 hover:border-purple-500/50 hover:bg-gradient-to-br hover:from-purple-600/20 hover:to-pink-600/20 hover:scale-110 hover:-translate-y-1 transition-all duration-300"
