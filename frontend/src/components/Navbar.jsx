@@ -128,7 +128,7 @@ export default function Navbar() {
     },
     {
       icon: Instagram,
-      href: "https://www.instagram.com/perfect.service.provider/",
+      href: "https://www.instagram.com/perfect.service.provider.psp",
       label: "Instagram",
       color: "text-pink-600 hover:text-white",
       bgHover: "hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-600 hover:to-orange-500",
