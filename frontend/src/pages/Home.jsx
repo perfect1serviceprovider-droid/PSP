@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import GoogleReviews from "../components/GoogleReviews";
+import VideoTestimonials from "../components/VideoTestimonials";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import {
   CheckCircle,
@@ -44,6 +45,11 @@ import {
   CheckCircle2,
   ChevronRight,
   ArrowUpRight,
+  Workflow,
+  Megaphone,
+  Layout,
+  BarChart,
+  Settings,
 } from "lucide-react";
 
 // Enhanced Typing Animation Component (Buttons Removed)
@@ -212,8 +218,8 @@ const LargeImageSlider = () => {
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`relative h-3 transition-all duration-500 ${index === currentSlide
-                  ? 'w-12 bg-white'
-                  : 'w-3 bg-white/40 hover:bg-white/60'
+                ? 'w-12 bg-white'
+                : 'w-3 bg-white/40 hover:bg-white/60'
                 } rounded-full overflow-hidden`}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
@@ -827,8 +833,8 @@ export default function Home() {
       </section>
 
       <GoogleReviews />
+      <VideoTestimonials />
 
-      {/* Enhanced Contact Section */}
       {/* Enhanced Contact Section */}
       <section className="py-24 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden" ref={contactRef}>
         {/* Animated Background */}
